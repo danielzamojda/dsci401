@@ -10,7 +10,7 @@ mov.avg = function(values, n){
 		v = append(v,NA);
 	}
 
-	for(i in n:length(values)){
+	for(i in (n+1):length(values)){
 		x = mean(values[c((i-n):(i-1))]);
 		v = append(v,x);
 	}
@@ -27,7 +27,7 @@ mov.avg.summary = function(values, n){
 	}
 	
 	for(i in (n+1):length(values)){
-		num =  values[i]-ma[i+1];
+		num =  values[i]-ma[i];
 		v = append(v,num);
 	}
 	ans = list(ma,v);
